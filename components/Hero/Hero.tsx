@@ -18,6 +18,9 @@ const Hero = () => {
     { id: 2, src: ImageHome_2, alt: "ImageHome_2" },
   ];
 
+  const text = "Nature's Beauty Delivered to You";
+  const letters = text.split("");
+
   const [activeId, setActiveId] = useState(2);
   const activeImage = ImageHome.find((item) => item.id === activeId);
 
@@ -48,25 +51,62 @@ const Hero = () => {
       </AnimatePresence>
 
       <div className="z-20 w-full flex flex-col items-center justify-center">
-        <h1 className="text-2xl lg:text-4xl xl:text-6xl text-white font-bold">
-          Nature's Beauty Delivered to You
-        </h1>
-        <p className="py-4 text-sm lg:text-base text-white text-center w-[80%] sm:w-[60%] lg:w-[45%]">
+        <div className="flex flex-wrap">
+          {text.split("").map((letter, index) => (
+            <motion.span
+              key={index}
+              className="text-2xl lg:text-4xl xl:text-6xl text-white font-bold"
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{
+                delay: index * 0.05,
+                type: "spring",
+                stiffness: 100,
+              }}
+            >
+              {letter}
+            </motion.span>
+          ))}
+        </div>
+
+        <motion.p
+          className="py-4 text-xs lg:text-base text-white text-center w-[80%] sm:w-[60%] lg:w-[45%]"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+        >
           Nature's beauty is just a click away with our online flower and plant
           shop. We offer a wide variety of flowers that will bring a touch of
           nature to your home!
-        </p>
+        </motion.p>
       </div>
-      <div className="z-20 flex space-x-6">
+      <div className="z-20 flex space-x-6 mt-4">
         <motion.button
-          whileHover={{ scale: 1.1 }}
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 0.5,
+            duration: 0.6,
+            type: "spring",
+            stiffness: 100,
+          }}
+          whileHover={{ scale: 1.1, boxShadow: "0px 8px 15px rgba(0,0,0,0.3)" }}
           whileTap={{ scale: 0.95 }}
           className="px-6 h-[34px] sm:h-[38px] border border-primary rounded-sm text-white bg-primary font-normal text-sm sm:text-shadow-lg cursor-pointer"
         >
           Book Now
         </motion.button>
+
         <motion.button
-          whileHover={{ scale: 1.1 }}
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 0.5,
+            duration: 0.6,
+            type: "spring",
+            stiffness: 100,
+          }}
+          whileHover={{ scale: 1.1, boxShadow: "0px 8px 15px rgba(0,0,0,0.3)" }}
           whileTap={{ scale: 0.95 }}
           className="px-6 h-[34px] sm:h-[38px] border border-white rounded-sm text-white hover:text-primary hover:bg-white font-normal text-sm sm:text-shadow-lg cursor-pointer flex items-center justify-center gap-2"
         >
