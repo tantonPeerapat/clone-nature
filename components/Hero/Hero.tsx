@@ -55,7 +55,7 @@ const Hero = () => {
           {text.split("").map((letter, index) => (
             <motion.span
               key={index}
-              className="text-2xl lg:text-4xl xl:text-6xl text-white font-bold"
+              className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl text-white font-bold"
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{
@@ -70,7 +70,7 @@ const Hero = () => {
         </div>
 
         <motion.p
-          className="py-4 text-xs lg:text-base text-white text-center w-[80%] sm:w-[60%] lg:w-[45%]"
+          className="py-4 text-xs sm:text-base lg:text-base text-white text-center w-[80%] sm:w-[65%] lg:w-[45%]"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
