@@ -70,7 +70,7 @@ const Hero = () => {
         </div>
 
         <motion.p
-          className="py-4 text-xs sm:text-base lg:text-base text-white text-center w-[80%] sm:w-[65%] lg:w-[45%]"
+          className="py-4 text-xs sm:text-base lg:text-base text-white text-center w-[80%] sm:w-[70%] lg:w-[45%]"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
@@ -85,7 +85,7 @@ const Hero = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
-            delay: 0.5,
+            delay: 0.05,
             duration: 0.6,
             type: "spring",
             stiffness: 100,

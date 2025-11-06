@@ -2,13 +2,34 @@
 import { navLinks } from "@/constant/constant";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 import { motion } from "framer-motion";
 
 const NavBar = () => {
+  const [scrollChange, setScrollChange] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrollChange(true);
+      } else {
+        setScrollChange(false);
+      }
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="fixed top-0 left-1/2 -translate-x-1/2 py-2 px-6 sm:px-0 w-full sm:w-[90%] flex justify-between items-center z-10">
+    <div
+      className={`fixed top-0 py-2 px-6 w-full flex justify-between items-center z-30 transition-colors duration-500
+    ${scrollChange ? "bg-primary/60 backdrop-blur-md" : "bg-none"}`}
+    >
       <Image
         src="/Logo.png"
         alt="Logo"
