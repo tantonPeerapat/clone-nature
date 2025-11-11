@@ -40,14 +40,11 @@ const AboutUs = () => {
         </div>
       </div>
       <motion.div
-        className="mt-4 mx-4 lg:mx-40 lg:mt-10 flex flex-col lg:flex-row gap-6 lg:gap-15"
-        initial={{ x: "100%", opacity: 0 }} // เริ่มจากด้านขวานอกจอ
-        animate={{ x: 0, opacity: 1 }} // เคลื่อนเข้ามาและปรากฏ
-        transition={{
-          type: "tween", // ใช้ tween สำหรับการเคลื่อนแบบ linear/ง่ายๆ
-          ease: "easeOut", // เลื่อนนุ่มๆ
-          duration: 2, // ปรับให้ช้า 2 วินาที
-        }}
+        className="mt-4 mx-4 lg:mx-40 lg:mt-10 flex flex-col lg:flex-row gap-6 lg:gap-15 p-6 rounded-lg"
+        initial={{ x: 300, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ type: "tween", ease: "easeOut", duration: 2 }}
       >
         <div className="p-4 w-full h-[280px] lg:h-[380px] lg:p-6 shadow-md rounded-md">
           <Image src={Indoor_Plant} alt="Indoor_Plant"></Image>
