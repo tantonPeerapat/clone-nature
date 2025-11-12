@@ -12,3 +12,7 @@
 @theme {
   --border-primary: #285a43;
 }
+
+.card-product {
+  @apply bg-white rounded-lg shadow-sm relative;
+}
