@@ -68,7 +68,7 @@ const Product = () => {
   ];
 
   return (
-    <section className="mt-2">
+    <section id="planter" className="mt-2">
       <div className="w-full flex justify-center">
         <motion.h1
           className="text-2xl sm:text-3xl lg:text-4xl text-primary font-semibold capitalize"
@@ -108,7 +108,7 @@ const Product = () => {
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 type="button"
-                className="px-6 w-full sm:w-auto h-[34px] sm:h-[38px] border-2 border-primary rounded-sm font-medium text-primary hover:text-white hover:bg-primary cursor-pointer"
+                className="px-6 w-full text-xs md:text-md sm:w-auto h-[34px] sm:h-[38px] border-2 border-primary rounded-sm font-medium text-primary hover:text-white hover:bg-primary cursor-pointer"
               >
                 Buy Now
               </motion.button>

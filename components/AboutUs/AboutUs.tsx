@@ -8,7 +8,7 @@ import Plants_Pots from "@/assets/Plants_Pots.png";
 
 const AboutUs = () => {
   return (
-    <section>
+    <section id="aboutUs">
       <div className="px-12 lg:px-40 pt-6 lg:pt-18">
         <div className="flex flex-col lg:flex-row">
           <div className="w-full lg:w-[50%]">
